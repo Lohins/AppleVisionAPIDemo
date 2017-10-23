@@ -67,7 +67,7 @@ extension MainPageViewController: UITableViewDelegate, UITableViewDataSource{
         
         switch functionType {
         case .FaceDetection:
-            print(functionType.text())
+            self.performSegue(withIdentifier: "FaceDetectionSegue", sender: nil)
         case .RectangleDetection:
             print(functionType.text())
         case .BarcodeDetection:
