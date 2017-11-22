@@ -27,6 +27,13 @@
 		CE49E3761F9D9B7600595F72 /* FD_SettingMarkWidthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49E3751F9D9B7600595F72 /* FD_SettingMarkWidthViewModel.swift */; };
 		CEF639531F9E35C700D18C49 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF639521F9E35C700D18C49 /* CGPoint+Extension.swift */; };
 		CEF639551F9E4C3200D18C49 /* FaceDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF639541F9E4C3200D18C49 /* FaceDetectionViewModel.swift */; };
+		CEF639581F9E9C3800D18C49 /* BarcodeDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF639571F9E9C3800D18C49 /* BarcodeDetectionViewController.swift */; };
+		CEF6395B1F9E9C6200D18C49 /* TextDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6395A1F9E9C6100D18C49 /* TextDetectionViewController.swift */; };
+		CEF639601F9E9CA000D18C49 /* ObjectTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6395F1F9E9CA000D18C49 /* ObjectTrackingViewController.swift */; };
+		CEF639631F9E9CCA00D18C49 /* RectangleDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF639621F9E9CCA00D18C49 /* RectangleDetectionViewController.swift */; };
+		CEF639661F9EA00D00D18C49 /* BarcodeDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF639651F9EA00D00D18C49 /* BarcodeDetectionViewModel.swift */; };
+		CEF639691F9EA32F00D18C49 /* VisionViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF639681F9EA32F00D18C49 /* VisionViewModelProtocol.swift */; };
+		CEF6396C1F9EABD900D18C49 /* TextDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6396B1F9EABD900D18C49 /* TextDetectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +59,13 @@
 		CE49E3751F9D9B7600595F72 /* FD_SettingMarkWidthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FD_SettingMarkWidthViewModel.swift; sourceTree = "<group>"; };
 		CEF639521F9E35C700D18C49 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		CEF639541F9E4C3200D18C49 /* FaceDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionViewModel.swift; sourceTree = "<group>"; };
+		CEF639571F9E9C3800D18C49 /* BarcodeDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeDetectionViewController.swift; sourceTree = "<group>"; };
+		CEF6395A1F9E9C6100D18C49 /* TextDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetectionViewController.swift; sourceTree = "<group>"; };
+		CEF6395F1F9E9CA000D18C49 /* ObjectTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectTrackingViewController.swift; sourceTree = "<group>"; };
+		CEF639621F9E9CCA00D18C49 /* RectangleDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleDetectionViewController.swift; sourceTree = "<group>"; };
+		CEF639651F9EA00D00D18C49 /* BarcodeDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeDetectionViewModel.swift; sourceTree = "<group>"; };
+		CEF639681F9EA32F00D18C49 /* VisionViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewModelProtocol.swift; sourceTree = "<group>"; };
+		CEF6396B1F9EABD900D18C49 /* TextDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,7 @@
 		CE49E33F1F9AE2F500595F72 /* AppleVisionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CEF639671F9EA31300D18C49 /* Protocol */,
 				CE49E3631F9D257800595F72 /* Extension */,
 				CE49E3541F9AE39700595F72 /* Base */,
 				CE49E3531F9AE39000595F72 /* Model */,
@@ -101,6 +116,10 @@
 		CE49E3521F9AE38200595F72 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CEF6395E1F9E9C8D00D18C49 /* Object Tracking */,
+				CEF6395C1F9E9C6E00D18C49 /* Rectangle Detection */,
+				CEF639591F9E9C4700D18C49 /* Text Detection */,
+				CEF639561F9E9BE600D18C49 /* Barcode Detection */,
 				CE49E35E1F9D183C00595F72 /* Face Detection */,
 				CE49E3551F9AE42800595F72 /* Main Page */,
 			);
@@ -197,6 +216,72 @@
 			path = configuration;
 			sourceTree = "<group>";
 		};
+		CEF639561F9E9BE600D18C49 /* Barcode Detection */ = {
+			isa = PBXGroup;
+			children = (
+				CEF639641F9E9FF200D18C49 /* View Model */,
+				CEF639571F9E9C3800D18C49 /* BarcodeDetectionViewController.swift */,
+			);
+			path = "Barcode Detection";
+			sourceTree = "<group>";
+		};
+		CEF639591F9E9C4700D18C49 /* Text Detection */ = {
+			isa = PBXGroup;
+			children = (
+				CEF6396A1F9EABBD00D18C49 /* View Model */,
+				CEF6395A1F9E9C6100D18C49 /* TextDetectionViewController.swift */,
+			);
+			path = "Text Detection";
+			sourceTree = "<group>";
+		};
+		CEF6395C1F9E9C6E00D18C49 /* Rectangle Detection */ = {
+			isa = PBXGroup;
+			children = (
+				CEF639611F9E9CBD00D18C49 /* New Group */,
+				CEF639621F9E9CCA00D18C49 /* RectangleDetectionViewController.swift */,
+			);
+			path = "Rectangle Detection";
+			sourceTree = "<group>";
+		};
+		CEF6395E1F9E9C8D00D18C49 /* Object Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				CEF6395F1F9E9CA000D18C49 /* ObjectTrackingViewController.swift */,
+			);
+			path = "Object Tracking";
+			sourceTree = "<group>";
+		};
+		CEF639611F9E9CBD00D18C49 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CEF639641F9E9FF200D18C49 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEF639651F9EA00D00D18C49 /* BarcodeDetectionViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		CEF639671F9EA31300D18C49 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CEF639681F9EA32F00D18C49 /* VisionViewModelProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CEF6396A1F9EABBD00D18C49 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEF6396B1F9EABD900D18C49 /* TextDetectionViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -271,17 +356,24 @@
 			files = (
 				CE49E35B1F9D0A8000595F72 /* MP_FuncTableViewCell.swift in Sources */,
 				CE49E36C1F9D6FF600595F72 /* FaceDetectionConfigure.swift in Sources */,
+				CEF639601F9E9CA000D18C49 /* ObjectTrackingViewController.swift in Sources */,
 				CE49E3761F9D9B7600595F72 /* FD_SettingMarkWidthViewModel.swift in Sources */,
 				CE49E3721F9D9A1E00595F72 /* FD_SettingTypeViewModel.swift in Sources */,
 				CE49E3651F9D259000595F72 /* UIImage+Extension.swift in Sources */,
 				CE49E3431F9AE2F500595F72 /* ViewController.swift in Sources */,
 				CE49E3671F9D2F0F00595F72 /* CGRect-Extension.swift in Sources */,
+				CEF639581F9E9C3800D18C49 /* BarcodeDetectionViewController.swift in Sources */,
+				CEF639661F9EA00D00D18C49 /* BarcodeDetectionViewModel.swift in Sources */,
+				CEF639631F9E9CCA00D18C49 /* RectangleDetectionViewController.swift in Sources */,
 				CE49E3691F9D6C7E00595F72 /* FaceDetectionSettingVC.swift in Sources */,
 				CE49E35D1F9D0B5200595F72 /* MainPageViewModel.swift in Sources */,
+				CEF639691F9EA32F00D18C49 /* VisionViewModelProtocol.swift in Sources */,
 				CE49E3571F9AE47700595F72 /* MainPageViewController.swift in Sources */,
+				CEF6396C1F9EABD900D18C49 /* TextDetectionViewModel.swift in Sources */,
 				CE49E3411F9AE2F500595F72 /* AppDelegate.swift in Sources */,
 				CE49E3741F9D9B1700595F72 /* FD_SettingMarkColorViewModel.swift in Sources */,
 				CEF639551F9E4C3200D18C49 /* FaceDetectionViewModel.swift in Sources */,
+				CEF6395B1F9E9C6200D18C49 /* TextDetectionViewController.swift in Sources */,
 				CE49E3621F9D187200595F72 /* FaceDetectionViewController.swift in Sources */,
 				CE49E36E1F9D991800595F72 /* FaceDetectionSettingTVC.swift in Sources */,
 				CEF639531F9E35C700D18C49 /* CGPoint+Extension.swift in Sources */,

@@ -71,9 +71,9 @@ extension MainPageViewController: UITableViewDelegate, UITableViewDataSource{
         case .RectangleDetection:
             print(functionType.text())
         case .BarcodeDetection:
-            print(functionType.text())
+            self.performSegue(withIdentifier: "BarcodeDetectionSegue", sender: nil)
         case .TextDetection:
-            print(functionType.text())
+            self.performSegue(withIdentifier: "TextDetectionSegue", sender: nil)
         case .ObjectTracking:
             print(functionType.text())
         }

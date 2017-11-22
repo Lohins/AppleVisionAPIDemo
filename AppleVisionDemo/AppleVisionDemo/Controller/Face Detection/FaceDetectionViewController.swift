@@ -73,7 +73,6 @@ class FaceDetectionViewController: UIViewController {
             }
         }
     }
-
 }
 
 extension FaceDetectionViewController: FaceDetectionSettingProtocol{
@@ -81,7 +80,6 @@ extension FaceDetectionViewController: FaceDetectionSettingProtocol{
         self.reloadImageData()
     }
 }
-
 
 extension FaceDetectionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

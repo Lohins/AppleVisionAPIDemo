@@ -23,7 +23,7 @@ class FaceDetectionSettingVC: UITableViewController {
         self.tableView.register(FaceDetectionSettingTVC.classForCoder(), forCellReuseIdentifier: FaceDetectionSettingTVC.identifier)
         
         self.tableView.tableFooterView = UIView.init()
-        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 20, height: 20))
+//        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 20, height: 20))
     }
     
     @IBAction func doneAction(_ sender: Any) {

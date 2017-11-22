@@ -205,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="1345" y="-1137"/>
         </scene>
-        <!--View Controller-->
+        <!--Rectangle Detection View Controller-->
         <scene sceneID="pOM-Jp-iar">
             <objects>
-                <viewController id="ICe-Ek-2Bz" sceneMemberID="viewController">
+                <viewController id="ICe-Ek-2Bz" customClass="RectangleDetectionViewController" customModule="AppleVisionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7QR-5G-tmY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,42 +221,127 @@
             </objects>
             <point key="canvasLocation" x="2470" y="-321"/>
         </scene>
-        <!--View Controller-->
+        <!--Barcode Detection View Controller-->
         <scene sceneID="Nqk-e9-kJ2">
             <objects>
-                <viewController id="9eD-GO-XAD" sceneMemberID="viewController">
+                <viewController id="9eD-GO-XAD" customClass="BarcodeDetectionViewController" customModule="AppleVisionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fqb-CK-feM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hQV-dh-RLR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No image selected." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ0-k1-1O9">
+                                <rect key="frame" x="0.0" y="626" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="zoU-3R-TZn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ITd-Wl-cMi">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ITd-Wl-cMi" firstAttribute="centerX" secondItem="fqb-CK-feM" secondAttribute="centerX" id="Pmi-QK-OxG"/>
+                            <constraint firstItem="hQV-dh-RLR" firstAttribute="leading" secondItem="IUV-FM-NK3" secondAttribute="leading" id="TKx-fF-BoI"/>
+                            <constraint firstItem="iJ0-k1-1O9" firstAttribute="leading" secondItem="IUV-FM-NK3" secondAttribute="leading" id="WMn-Pj-DcS"/>
+                            <constraint firstItem="ITd-Wl-cMi" firstAttribute="centerY" secondItem="fqb-CK-feM" secondAttribute="centerY" id="ayq-A0-bSd"/>
+                            <constraint firstItem="hQV-dh-RLR" firstAttribute="top" secondItem="IUV-FM-NK3" secondAttribute="top" id="e1k-sq-tkH"/>
+                            <constraint firstItem="iJ0-k1-1O9" firstAttribute="bottom" secondItem="IUV-FM-NK3" secondAttribute="bottom" id="oS1-ZO-jQP"/>
+                            <constraint firstItem="iJ0-k1-1O9" firstAttribute="trailing" secondItem="IUV-FM-NK3" secondAttribute="trailing" id="thR-9p-TB2"/>
+                            <constraint firstItem="hQV-dh-RLR" firstAttribute="bottom" secondItem="IUV-FM-NK3" secondAttribute="bottom" id="uUV-AL-Qdd"/>
+                            <constraint firstItem="hQV-dh-RLR" firstAttribute="trailing" secondItem="IUV-FM-NK3" secondAttribute="trailing" id="yOD-Bv-InE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="IUV-FM-NK3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="j7x-h2-Fpa"/>
+                    <navigationItem key="navigationItem" id="j7x-h2-Fpa">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Y1W-vx-F4W">
+                            <connections>
+                                <action selector="dismissAction:" destination="9eD-GO-XAD" id="VWg-uT-qZn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jpf-IG-G5C">
+                            <connections>
+                                <action selector="selectImageAction:" destination="9eD-GO-XAD" id="ZKj-51-0t3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="hQV-dh-RLR" id="ZTX-tt-bMi"/>
+                        <outlet property="loadingView" destination="ITd-Wl-cMi" id="fp0-jj-uoF"/>
+                        <outlet property="selectImageItem" destination="jpf-IG-G5C" id="Lbw-Uy-3tl"/>
+                        <outlet property="textLabel" destination="iJ0-k1-1O9" id="ZoN-ra-awv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4e-Mb-nf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2470" y="419"/>
+            <point key="canvasLocation" x="2469.5999999999999" y="418.74062968515744"/>
         </scene>
-        <!--View Controller-->
+        <!--Text Detection View Controller-->
         <scene sceneID="6Wq-e6-6zF">
             <objects>
-                <viewController id="yin-ll-l6c" sceneMemberID="viewController">
+                <viewController id="yin-ll-l6c" customClass="TextDetectionViewController" customModule="AppleVisionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cE2-zD-B4m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Som-RJ-Egb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No image selected." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlO-d7-L0W">
+                                <rect key="frame" x="0.0" y="626" width="375" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6RX-Ve-CNC">
+                                <rect key="frame" x="177" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Som-RJ-Egb" firstAttribute="trailing" secondItem="4lX-YH-XdI" secondAttribute="trailing" id="8tI-kJ-c4E"/>
+                            <constraint firstItem="Som-RJ-Egb" firstAttribute="top" secondItem="4lX-YH-XdI" secondAttribute="top" id="P2y-GI-BS0"/>
+                            <constraint firstItem="Som-RJ-Egb" firstAttribute="bottom" secondItem="4lX-YH-XdI" secondAttribute="bottom" id="TDm-50-WAi"/>
+                            <constraint firstItem="6RX-Ve-CNC" firstAttribute="centerY" secondItem="cE2-zD-B4m" secondAttribute="centerY" id="hbk-Xe-E3f"/>
+                            <constraint firstItem="Som-RJ-Egb" firstAttribute="leading" secondItem="4lX-YH-XdI" secondAttribute="leading" id="pee-dG-NiQ"/>
+                            <constraint firstItem="6RX-Ve-CNC" firstAttribute="centerX" secondItem="cE2-zD-B4m" secondAttribute="centerX" id="rl9-pw-x3Y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4lX-YH-XdI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="brg-hl-k5c"/>
+                    <navigationItem key="navigationItem" id="brg-hl-k5c">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="jaI-aA-xv0">
+                            <connections>
+                                <action selector="backAction:" destination="yin-ll-l6c" id="Zgt-gg-8DU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PJs-fl-c0l">
+                            <connections>
+                                <action selector="selectImageAction:" destination="yin-ll-l6c" id="8NE-le-TQX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Som-RJ-Egb" id="iL3-le-iTc"/>
+                        <outlet property="loadingView" destination="6RX-Ve-CNC" id="XuN-te-5q3"/>
+                        <outlet property="selectImageItem" destination="PJs-fl-c0l" id="ZwW-Ye-C1y"/>
+                        <outlet property="textLabel" destination="GlO-d7-L0W" id="Ird-Ai-jQm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMm-sv-gSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2470" y="1165"/>
+            <point key="canvasLocation" x="2469.5999999999999" y="1164.4677661169417"/>
         </scene>
-        <!--View Controller-->
+        <!--Object Tracking View Controller-->
         <scene sceneID="CJO-nV-7yS">
             <objects>
-                <viewController id="u2U-Ca-UkG" sceneMemberID="viewController">
+                <viewController id="u2U-Ca-UkG" customClass="ObjectTrackingViewController" customModule="AppleVisionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bzF-Pv-akQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

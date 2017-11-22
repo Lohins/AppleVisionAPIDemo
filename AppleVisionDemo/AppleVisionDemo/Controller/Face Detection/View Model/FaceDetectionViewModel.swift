@@ -10,9 +10,9 @@ import UIKit
 import Vision
 
 
-struct FaceDetectionViewModel {
+struct FaceDetectionViewModel : VisionViewModelProtocol {
     
-    typealias completion = (_ image: UIImage?)-> Void
+//    typealias completion = (_ image: UIImage?)-> Void
     func generateImage(image: UIImage, Completion: @escaping completion)  {
         if UserDefaults.faceDetectionType() == FaceDetectionType.FaceRectangle{
             self.faceDetection(image: image, completion: Completion)
